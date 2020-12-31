@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tam40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Game.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.34902, 0.478431, 1, 1 )
+
+[node name="Game" type="Node"]
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 200.0
+margin_top = -104.5
+margin_right = -200.0
+margin_bottom = 104.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_jugar" type="Button" parent="VBoxContainer"]
+margin_right = 624.0
+margin_bottom = 67.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Jugar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_estats" type="Button" parent="VBoxContainer"]
+margin_top = 71.0
+margin_right = 624.0
+margin_bottom = 138.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Estadisticas"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_salir" type="Button" parent="VBoxContainer"]
+margin_top = 142.0
+margin_right = 624.0
+margin_bottom = 209.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/btn_jugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/btn_salir" to="." method="_on_btn_salir_pressed"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/lifebar_bg.png" type="Texture" id=1]
+[ext_resource path="res://sprites/lifebar_fill.png" type="Texture" id=2]
+[ext_resource path="res://HUD_Boss.gd" type="Script" id=3]
+
+[node name="HUD_Boss" type="CanvasLayer"]
+layer = -1
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+modulate = Color( 1, 1, 1, 0.529412 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -205.081
+margin_top = 5.65685
+margin_right = 190.919
+margin_bottom = 58.6569
+rect_scale = Vector2( 0.5, 0.5 )
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

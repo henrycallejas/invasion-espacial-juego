@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ModelLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Enemigo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD_Boss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Boss1.tscn" type="PackedScene" id=4]
+
+[node name="Level1" instance=ExtResource( 1 )]
+enemigo = ExtResource( 2 )
+boss = ExtResource( 4 )
+hud_boss = ExtResource( 3 )
+next_level = "res://Level2.tscn"
+level_name = "Level1"
+
+[node name="TimerBoss" parent="." index="6"]
+wait_time = 30.0
+
+[node name="PositionBoss" parent="." index="7"]
+position = Vector2( 508.894, 15.5563 )

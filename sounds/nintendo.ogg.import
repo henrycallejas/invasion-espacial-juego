@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/nintendo.ogg-a42ee709724c41b6db66c066ecdfe1a9.oggstr"
+
+[deps]
+
+source_file="res://sounds/nintendo.ogg"
+dest_files=[ "res://.import/nintendo.ogg-a42ee709724c41b6db66c066ecdfe1a9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
