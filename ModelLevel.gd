@@ -11,8 +11,9 @@ onready var puntos= Persistence.data["Puntaje"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HUD/Puntaje.text = str(puntos)
-	$HUD/Vidas.text = "Vidas: " + str(Persistence.data["Vidas"])
+	actualizarPuntos()
+	actualizarVidas()
+	actualizarElixir()
 	print(get_node(".").name)
 	var nivel = get_node(".").name
 	obtenerNivel(nivel)
@@ -62,7 +63,16 @@ func punto_sumado():
 	puntos +=1
 	Persistence.data["Puntaje"] +=1
 	Persistence.save_data()
+	actualizarPuntos()
+	
+func actualizarPuntos():
 	$HUD/Puntaje.text = str(puntos)
+	
+func actualizarVidas():
+	$HUD/Vidas.text = "Vidas: " + str(Persistence.data["Vidas"])
+
+func actualizarElixir():
+	$HUD/Elixir.text = "Elixir: " + str(Persistence.data["Elixir"])
 
 func _on_espaciovacio2_area_entered(area):
 	if area.is_in_group("enemigos"):
@@ -81,7 +91,7 @@ func quitar_vida():
 	print("Entre a señal vida perdida")
 	Persistence.data["Vidas"] -=1
 	Persistence.save_data()
-	$HUD/Vidas.text = "Vidas: " + str(Persistence.data["Vidas"])
+	actualizarVidas()
 
 func cambiar_nivel():
 	get_tree().change_scene(next_level)
@@ -98,3 +108,19 @@ func conectarPausa():
 	get_tree().paused = !get_tree().paused
 	if(get_tree().paused == false):
 		$HUD/Button.text = 'Pausa'
+
+
+func _on_SpaceShip_elixir_ganado():
+	Persistence.data["Elixir"] +=20
+	Persistence.save_data()
+	actualizarElixir()
+	verificarElixir()
+	pass # Replace with function body.
+
+func verificarElixir():
+	if Persistence.data["Elixir"] >= 100:
+		Persistence.data["Vidas"] +=1
+		Persistence.data["Elixir"] = 0
+		Persistence.save_data()
+		actualizarVidas()
+		actualizarElixir()

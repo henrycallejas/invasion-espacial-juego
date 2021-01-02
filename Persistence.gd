@@ -1,11 +1,12 @@
 extends Node
 
-const PATH = "user://dat_game.dat"
+const PATH = "user://dat_game3.dat"
 const PASS = "123abc"
 
 var is_loaded = false
 var data = {
 	"Puntaje": 0,
+	"Elixir": 0,
 	"Vidas": 3,
 		niveles = {
 			'Level1': false,

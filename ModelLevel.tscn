@@ -34,6 +34,7 @@ autostart = true
 [node name="PositionBoss" type="Position2D" parent="."]
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
+[connection signal="elixir_ganado" from="SpaceShip" to="." method="_on_SpaceShip_elixir_ganado"]
 [connection signal="tiro_al_jefe" from="SpaceShip" to="." method="_on_SpaceShip_tiro_al_jefe"]
 [connection signal="area_entered" from="espaciovacio2" to="." method="_on_espaciovacio2_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal punto_ganado
 signal vida_perdida
+signal elixir_ganado
 
 var velocidad_bala = 400
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +19,8 @@ func _on_Area2D_area_entered(area):
 		print("es una bala")
 	if area.is_in_group("enemigos") or area.is_in_group("boss"):
 		emit_signal("punto_ganado")
+	if area.is_in_group("balas"):
+		emit_signal("elixir_ganado")
 	queue_free()
 	pass # Replace with function body.
 

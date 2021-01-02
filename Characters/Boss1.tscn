@@ -26,5 +26,6 @@ wait_time = 0.6
 autostart = true
 
 [node name="HUD_Boss" parent="." instance=ExtResource( 3 )]
+health_value = 100
 [connection signal="area_entered" from="." to="." method="_on_Boss1_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

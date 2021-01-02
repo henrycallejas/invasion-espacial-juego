@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal tiro_al_jefe
+signal elixir_ganado
 
 export var velocidad = 200
 var direccion : int
@@ -36,9 +37,13 @@ func verificarDisparo():
 		nuevaBala.global_position = $Position2D.global_position
 		nuevaBala.connect("area_entered", self, "prueba")
 		nuevaBala.connect("punto_ganado", self, "en_punto_ganado")
+		nuevaBala.connect("elixir_ganado", self, "elixir_ganado")
 
 func en_punto_ganado():
 	emit_signal("tiro_al_jefe")
+
+func elixir_ganado():
+	emit_signal("elixir_ganado")
 
 func moverDerecha():
 	pass

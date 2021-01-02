@@ -34,6 +34,7 @@ func disparar_contra():
 	nueva_bala.connect("vida_perdida", self, "on_vida_perdida")
 
 func on_vida_perdida():
+	$HUD_Boss/TextureProgress.max_value = puntos_vida_boss
 	emit_signal("vida_perdida")
 
 func _on_Timer_timeout():
