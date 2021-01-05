@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Persistence="*res://Persistence.gd"
+Transicion="*res://Globals/Transicion.tscn"
 
 [display]
 

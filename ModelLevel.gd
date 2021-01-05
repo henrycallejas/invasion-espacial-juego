@@ -14,7 +14,7 @@ func _ready():
 	actualizarPuntos()
 	actualizarVidas()
 	actualizarElixir()
-	print(get_node(".").name)
+#	print(get_node(".").name) Sirve para saber el nombre del nivel del nodo principal de la escena
 	var nivel = get_node(".").name
 	obtenerNivel(nivel)
 	$HUD/Button.connect("pressed", self, "conectarPausa")
