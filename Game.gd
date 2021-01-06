@@ -10,5 +10,6 @@ func _on_btn_salir_pressed():
 
 
 func _on_btn_jugar_pressed():
-	get_tree().change_scene("res://Levels.tscn")
+	Transicion.cambiar_escena("res://Levels.tscn")
+#	get_tree().change_scene("res://Levels.tscn")
 	pass # Replace with function body.

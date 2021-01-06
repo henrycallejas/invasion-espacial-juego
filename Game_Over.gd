@@ -15,4 +15,4 @@ func _on_Button_pressed():
 	pass # Replace with function body.
 
 func play_again():
-	get_tree().change_scene("res://Level1.tscn")
+	Transicion.cambiar_escena("res://Level1.tscn")

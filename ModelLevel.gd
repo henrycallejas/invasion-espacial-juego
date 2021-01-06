@@ -30,7 +30,7 @@ func verificarVidas():
 	if Persistence.data["Vidas"] <=0:
 		Persistence.data["Vidas"] = 3
 		Persistence.save_data()
-		get_tree().change_scene("res://Game_Over.tscn")
+		Transicion.cambiar_escena("res://Game_Over.tscn")
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -94,7 +94,7 @@ func quitar_vida():
 	actualizarVidas()
 
 func cambiar_nivel():
-	get_tree().change_scene(next_level)
+	Transicion.cambiar_escena(next_level)
 	Persistence.data['niveles'][level_name] = false
 	Persistence.save_data()
 	pass
