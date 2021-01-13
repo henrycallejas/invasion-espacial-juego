@@ -12,9 +12,12 @@ func cambiar_escena(ruta: String):
 		layer = 1
 	anim_player.play("Fade")
 	yield(anim_player, "animation_finished")
-	get_tree().change_scene(ruta)
+	get_node(".").get_parent().get_tree().change_scene(ruta)
 	anim_player.play_backwards("Fade")
-	yield(anim_player, "animation_finished")
+	get_tree().create_timer(1)
+#	Creo el contador para darle tiempo a que se vuelva a cambiar
+#	el layer a -1 sino la capa de transición queda arriba de la capa 
+#	de Levels
 	layer = -1
 	
 	
